@@ -1,0 +1,1 @@
+rd /s /q "C:\wamp\www\comum\foo"
