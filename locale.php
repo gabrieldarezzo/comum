@@ -12,4 +12,6 @@
 
 // <meta charset="UTF-8">
 // <meta charset="iso-8859-1">
+
+////<html lang="pt-br">
 	
