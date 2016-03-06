@@ -27,12 +27,13 @@ try {
 		$base = "lucasviadao"; 
 		$conexao = mysqli_connect($server, $user, $senha, $base);
 	} else {
+		die('fixit');
 		
 		//Insert dos dados
 		$server = "localhost"; 
-		$user = "newle062_root"; 
-		$senha = "camelo666"; 
-		$base = "newle062_agenda"; 
+		$user = ""; 
+		$senha = ""; 
+		$base = ""; 
 		$conexao = mysqli_connect($server, $user, $senha, $base);
 		
 	}
