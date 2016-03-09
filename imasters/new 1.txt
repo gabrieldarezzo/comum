@@ -1,5 +1,0 @@
-<h3>Categorias:</h3>
-<ul id="">
-	
-
-</ul>
