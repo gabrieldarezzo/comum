@@ -1,0 +1,19 @@
+Fiquei curioso agora haha
+Diretamente acho q não rola, cheguei até tentar pela curiosidade.
+ 
+Uma maneira que consegui de listar arquivos de outro disco (caso esteja montado) é deixar um script em do OS.
+ 
+ 
+ 
+Ex:
+executar.php
+[code=auto:0]<?php
+system('exec.bat'); [/code]
+exec.bat
+[code=auto:0]cd \
+F:
+dir [/code]
+E magicamente a saída foi:
+[color=#000000][font='Times New Roman']"O volume na unidade F ‚ Reservado pelo Sistema O N£mero de S‚rie do Volume ‚ 5280"[/size][/font][/color]
+ 
+Boa sorte ;)
