@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		#tabuleiro{
+			width: 300px;
+			height: 300px;
+			background-color: #333;
+		}
+		
+		.pos{
+			float: left;
+			width: 33%;
+			height: 33%;
+		}
+	</style>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	
+			var url_vermelha = "url('http://www.dikopataka.com.br/images/bolinha_vermelha.png')";
+			var url_amarela = "url('http://www.dikopataka.com.br/images/bolinha_amarela.png')";
+			
+			var click = 0;
+			
+			$( ".pos" ).bind( "click", function() {
+				if(click % 2 ==0){
+					$( this ).css({'background-image': url_vermelha, 'background-repeat' : 'no-repeat'})
+				} else {
+					$( this ).css({'background-image': url_amarela, 'background-repeat' : 'no-repeat'})
+				}
+				
+				click++;
+				
+			});
+		});
+	
+	</script>
+	
+	<div id="tabuleiro">
+		
+		<div id="id_col1" class="pos">.</div>
+		<div id="id_col2" class="pos">.</div>
+		<div id="id_col3" class="pos">.</div>
+		
+		<div id="id_col4" class="pos">.</div>
+		<div id="id_col5" class="pos">.</div>
+		<div id="id_col6" class="pos">.</div>
+		
+		<div id="id_col7" class="pos">.</div>
+		<div id="id_col8" class="pos">.</div>
+		<div id="id_col9" class="pos">.</div>
+	</div>
+	
+</body>
+</html>
