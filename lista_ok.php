@@ -122,6 +122,7 @@ foreach($rows as $row){
 			foreach($listacontatos as $listacontato){
 				if($listacontato['contatos_id'] == $id_contato && $listacontato['lista_id'] == $l){
 					$insert = false;
+					break;
 				}
 			}
 			// var_dump($listas);die();
