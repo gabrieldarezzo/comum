@@ -8,14 +8,14 @@ try {
 	
 	
 	// Exemplo de validações...
-	// if (!isset($_POST['nome']) || $_POST['nome'] == ""){
-		// //Caso validação esteja errada joga no Trow
-		// throw new Exception("Informe uma mensagem.");
-	// }
+	if (!isset($_POST['nome']) || $_POST['nome'] == ""){
+		//Caso validação esteja errada joga no Trow
+		throw new Exception("Informe uma mensagem.");
+	}
 	
-	// if (!isset($_POST['email']) || $_POST['email'] == "" ){
-		// throw new Exception("Informe uma mensagem.");
-	// }
+	if (!isset($_POST['email']) || $_POST['email'] == "" ){
+		throw new Exception("Informe uma mensagem.");
+	}
 	//Fim das validações
 	
 	
