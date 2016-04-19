@@ -16,3 +16,17 @@ base64_encode(file_get_contents("arquivo.txt"));
 base64_decode($oquefoicodigicado);
 // para retornar na íntegra o nome dos domínios.
 // Isso serve para transferir o conteúdo sem ter que se preocupara com codificação
+
+
+// $this->dns 	= "mysql:dbname=duvida;host=localhost;charset=utf8";
+// parent::exec("set names utf8"); //Garante UTF para acabar com a palhaçada em versão < 5.3
+// mysql_query("set names utf8");
+
+
+//
+/*
+CREATE DATABASE inwork
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+*/
