@@ -1,0 +1,7 @@
+Precisa ter um arquivo composer.json valido.
+
+navegar até a pasta, ex:
+C:\wamp\www\app
+
+e executar
+composer install

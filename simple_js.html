@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<h2>Peça</h2>
+	<div id="dados-js">
+		
+		<p>Valor da roupa (Decimal, com .)</p>
+		<input type="text" name="vroupa" id="vroupa" value="120.00"/>
+		
+		<p>Valor em (%) do desconto</p>
+		<input type="text" name="vdesconto" id="vdesconto" value="5"/>
+		
+		<p>Valor: <span id="total"></span></p> <!-- Aqui apos o calculo ser efetuado o valor é exibido  document.getElementById('total').innerText = TOTAL -->
+		
+		<button id="get-total">Calcular</button> <!-- aqui fica o listener ao ocorrer o evento 'click' ele é ativado --> 
+	
+	</div>
+	
+
+	<script type="text/javascript">
+		
+	
+		document.getElementById('get-total').addEventListener('click', function() {
+			var vroupa = document.getElementById('vroupa').value;
+			var vdesconto = document.getElementById('vdesconto').value;
+			
+			var total = vroupa / 100 * vdesconto;
+			
+			
+			document.getElementById('total').innerText = total;
+			
+			
+			
+		});
+		
+	</script>
+	
+</body>
+</html>
