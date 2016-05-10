@@ -5,6 +5,9 @@ header ('Content-type: text/html; charset=UTF-8');
 header ('Content-type: text/html; charset=ISO-8859-1');
 
 
+
+// header ('Content-type: application/json; charset=UTF-8');
+
 // <meta charset="UTF-8">
 // <meta charset="iso-8859-1">
 
@@ -25,7 +28,7 @@ base64_decode($oquefoicodigicado);
 
 //
 /*
-CREATE DATABASE inwork
+CREATE DATABASE santissima
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
