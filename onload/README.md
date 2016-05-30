@@ -6,16 +6,21 @@ Fluxo do problema
 * Script precisa ser executado após carregamento final do Servidor externo.  
 
 
-Chama o servidor externo. via Ajax:
-<script type="text/javascript" src="my_script.js"></script>
+Chama o servidor externo. via Ajax:   
+```html
+<script type="text/javascript" src="my_script.js"></script> <!--ocorre o delay aqui... de 0 ~ 10 seg -->
+```
 
 
-<script type="text/javascript" src="my_script_after.js"></script>
-'''
+
+Conteudo: my_script_after.js:
+
+```js
 $( document ).ajaxComplete(function( event, xhr, settings ) {
 	if(settings.url == 'load.php'){
 		//Codes go here...
 	}
 });
-'''
-
+```  
+Mais informações:  
+http://api.jquery.com/ajaxcomplete/
