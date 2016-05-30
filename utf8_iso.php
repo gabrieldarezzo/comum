@@ -28,8 +28,6 @@ base64_decode($oquefoicodigicado);
 
 //
 /*
-CREATE DATABASE santissima
-  DEFAULT CHARACTER SET utf8
-  DEFAULT COLLATE utf8_general_ci;
+CREATE DATABASE west_old DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
 */
