@@ -1,4 +1,4 @@
-# Exemplo de carregar um script JS após o outro ajax ser carregado 
+# Exemplo de como executar um script JS apenas após o outro ajax ser 100% carregado 
 
 Fluxo do problema  
 * HTML  
