@@ -559,12 +559,16 @@ var zen_settings = {
 					'	<meta charset="${charset}">\n' +
 					'	<title></title>\n' +
 					'</head>\n' +
-					//'<body>\n\t${child}|\n</body>\n' +
-					'<body>\n\t${child}|<script src="jquery-1.10.2.js"></script>\n\t<link href="custom.css" rel="stylesheet"/>\n</body>\n' +
+					'<body>\n\t${child}|<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>\n</body>\n' +
 					'</html>',
 			'jsready': '${jQuery}(document).ready(function() {\n'+
 					'\n\t${child}|' +
+					'\n});',
+			'bind': '${jQuery}( "#btn-action" ).bind( "click", function() {\n'+
+					'\t${child}|' +
 					'\n});'
+			
+			
 					
 			
 		},
