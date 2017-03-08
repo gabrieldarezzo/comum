@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form method="post" action="recebe.php" enctype="multipart/form-data">
+		<p>Arquivo:</p>
+		<input type="file" name="arquivo" id="arquivo" />
+		
+		<hr />
+		<span id="status">Esperando o Click</span>
+		<br />
+		<span id="focaNoTrabalho"></span>
+	
+		<input type="submit" value="Enviar" />
+	</form>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	
+	
+		
+		$(document).ready(function() {
+			
+			var boxOpen = false;
+			$( "#arquivo" ).bind( "click", function() {
+				var boxOpen = true;
+			
+				$(window).focus(function() {
+				
+					setTimeout(function(){					
+						if(boxOpen){					
+							if($( "#arquivo" ).val() == ''){
+								alert('Pq cancelou?!');
+							} else {
+								alert('Preencheu tudo msm em!');
+							}
+							boxOpen = false;
+						}
+						
+					
+					}, 100);
+				
+				});
+			});
+		});
+		
+	
+	</script>
+</body>
+</html>

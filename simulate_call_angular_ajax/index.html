@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	<hr />
+	
+	<button id="btn-action">Disparar Teste</button>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	
+
+
+	$(document).ready(function() {
+	
+		function makeAjax(){
+		
+			var requestData = [{
+					 cod_responsavel : '8484'
+					,cli 	: 'filomena'			
+				}
+			];
+			var params = JSON.stringify(requestData);
+			$.ajax({			
+				 url: '/api/index.php/alunos'			 
+				,headers: { "Content-Type": "application/json;charset=UTF-8" }
+				,data: params
+				,type:'POST'
+				,dataType: 'json'
+				,success: function(json){
+					console.log(json);
+					
+					return false;
+				}
+				,error: function(json){
+					
+				}
+			});
+		}
+			
+		
+		$( "#btn-action" ).bind( "click", function() {			
+			makeAjax();
+		});
+				
+		
+	});
+		
+	
+	
+	</script>
+</body>
+</html>

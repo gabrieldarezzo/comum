@@ -566,11 +566,9 @@ var zen_settings = {
 					'\n});',
 			'bind': '${jQuery}( "#btn-action" ).bind( "click", function() {\n'+
 					'\t${child}|' +
-					'\n});'
-			
-			
-					
-			
+					'\n});',
+			'jsbind': 'document.getElementById("id_element").addEventListener("click", function() {\n\t'+				
+			'\n});'
 		},
 		
 		'abbreviations': {
@@ -750,7 +748,8 @@ var zen_settings = {
  * ('system' and 'user') for fast and safe resurce update
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */var zen_resources = (function(){
+ */
+var zen_resources = (function(){
 	var TYPE_ABBREVIATION = 'zen-tag',
 		TYPE_EXPANDO = 'zen-expando',
 	
@@ -1107,7 +1106,8 @@ try {
  * @link http://chikuyonok.ru
  * 
  * @include "zen_coding.js"
- */var zen_parser = (function(){
+ */
+var zen_parser = (function(){
 	
 	var re_valid_name = /^[\w\d\-_\$\:@!]+\+?$/i;
 	
@@ -1651,7 +1651,8 @@ try {
  * @include "settings.js"
  * @include "zen_parser.js"
  * @include "zen_resources.js"
- */var zen_coding = (function(){
+ */
+var zen_coding = (function(){
 	var re_tag = /<\/?[\w:\-]+(?:\s+[\w\-:]+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*\s*(\/?)>$/,
 	
 		caret_placeholder = '{%::zen-caret::%}',
@@ -4200,7 +4201,8 @@ zen_coding.registerAction('evaluate_math_expression', evaluateMathExpression);
 /**
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	// Regular Expressions for parsing tags and attributes
 	var start_tag = /^<([\w\:\-]+)((?:\s+[\w\-:]+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/,
 		end_tag = /^<\/([\w\:\-]+)[^>]*>/,
@@ -5559,7 +5561,8 @@ var CSSEX = (function () {
  * @link http://chikuyonok.ru
  * 
  * @include "sex.js"
- */var ParserUtils = (function() {
+ */
+var ParserUtils = (function() {
 	var css_stop_chars = '{}/\\<>';
 	
 	function isStopChar(token) {
@@ -6774,7 +6777,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
  * Comment important tags (with 'id' and 'class' attributes)
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	/**
 	 * Add comments to tag
 	 * @param {ZenNode} node
@@ -6823,7 +6827,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
  * <em>!important</em> suffix 
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	var re_important = /(.+)\!$/;
 	function process(tree, profile) {
 		for (var i = 0, il = tree.children.length; i < il; i++) {
@@ -6846,7 +6851,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
  * Filter for escaping unsafe XML characters: <, >, &
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	var char_map = {
 		'<': '&lt;',
 		'>': '&gt;',
@@ -6879,7 +6885,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
  * padding:0; → padding: 0;
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	function process(tree, profile) {
 		for (var i = 0, il = tree.children.length; i < il; i++) {
 			/** @type {ZenNode} */
@@ -6907,7 +6914,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
  * @link http://chikuyonok.ru
  * 
  * @include "../zen_coding.js"
- */(function(){
+ */
+(function(){
 	var child_token = '${child}',
 		placeholder = '%s';
 	
@@ -7473,7 +7481,8 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
 	}
 	
 	zen_coding.registerFilter('s', process);
-})();/**
+})();
+/**
  * Trim filter: removes characters at the beginning of the text
  *  content that indicates lists: numbers, #, *, -, etc.
  * @author Sergey Chikuyonok (serge.che@gmail.com)
@@ -7495,12 +7504,14 @@ zen_coding.registerAction('update_image_size', updateImageSize);/**
 	}
 	
 	zen_coding.registerFilter('t', process);
-})();/**
+})();
+/**
  * Filter for trimming "select" attributes from some tags that contains
  * child elements
  * @author Sergey Chikuyonok (serge.che@gmail.com)
  * @link http://chikuyonok.ru
- */(function(){
+ */
+(function(){
 	var tags = {
 		'xsl:variable': 1,
 		'xsl:with-param': 1
