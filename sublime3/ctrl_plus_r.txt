@@ -1,1 +1,6 @@
 %APPDATA%\Sublime Text 3
+
+
+
+sublime.log_commands(False)
+sublime.log_input(False)aa
