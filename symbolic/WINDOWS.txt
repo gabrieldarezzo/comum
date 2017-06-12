@@ -1,0 +1,3 @@
+Criar um Link simbolico
+
+mklink /d "C:\wamp64\www\app" "C:\wamp64\www\api2\public"

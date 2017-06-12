@@ -1,0 +1,11 @@
+VoxPmo
+Deploy em produção:
+git clone https://gabrieldarezzo@bitbucket.org/gabrieldarezzo/voxpmo.git [PUT_PASSWORD] 
+
+curl -sS https://getcomposer.org/installer | php php composer.phar --no-dev --prefer-dist install
+
+// Por ultimo crie o Link cd ~ && ln -s -f ~/voxpmo/public/ public_html/clientes/mapleads cd ~ && ln -s -f ~/voxpmo/public/ public_html/clientes/voxpmo
+
+Mudar versão do php HostGator:
+User specific aliases and functions
+alias php='/opt/php70/bin/php' export PATH="/opt/php70/bin:$PATH"
