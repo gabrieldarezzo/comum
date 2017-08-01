@@ -4,4 +4,4 @@ C:\Users\Gabriel Darezzo\AppData\Roaming\Sublime Text 3\Packages\User
 
 
 sublime.log_commands(False)
-sublime.log_input(False)aa
+sublime.log_input(False)
