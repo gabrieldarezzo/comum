@@ -17,14 +17,14 @@
 		var params = "lorem=" + '123';
 		//data.registrationId
 		ajax.open("POST", url, true);		
-		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");		
+		ajax.setRequestHeader("Content-type", "application/application/json");
+		ajax.setRequestHeader( "Authorization", "Bearer VALOR_HARD_CODE"  );
 		
 		ajax.send(params);
 
 		ajax.onreadystatechange = function() {
 			if(ajax.readyState == 4 && ajax.status == 200) {
-			
-				//document.getElementById('result').innerHTML = ajax.responseText;
+				console.log(ajax.responseText);
 			}
 		}
 	</script>

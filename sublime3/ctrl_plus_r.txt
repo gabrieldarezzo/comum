@@ -1,5 +1,6 @@
 %APPDATA%\Sublime Text 3
 C:\Users\Gabriel Darezzo\AppData\Roaming\Sublime Text 3\Packages\User
+C:\Users\Gabriel\AppData\Roaming\Sublime Text 3\Packages\User
 
 
 
