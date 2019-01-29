@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+		var ajax = new XMLHttpRequest();
+		
+		//var url = "https://fcm.googleapis.com/fcm/send";		
+		//var url = "https://fcm.googleapis.com/v1/projects/vue-pwa-a9e64/messages:send";
+		var url = "https://android.googleapis.com/gcm/send";
+		
+		
+		
+		
+		
+		//var params = "lorem=ipsum&name=binny";
+		//var params = "lorem=" + '123';
+		//data.registrationId
+		ajax.open("POST", url, true);		
+		ajax.setRequestHeader("Content-type", "application/application/json");
+		ajax.setRequestHeader( "Authorization", "key=AAAAdKChS2I:APA91bGFjq8DOTrxIN55C7sa8fu1mDfUlUnBthwQF-uBTy4fW7WomPdPoL2ZX-AlFazgHnDMysi1TJNO5iQFkjzSV8Hy6AJe3gNBlOvh1gd9Tcc37lknrGGof8NyrTti3Yag642QQyUSrasuL3Kw7jEd2wcdMP1Uog"  );
+		
+		
+		var bodyData = {
+			"registration_ids" : "fmuqX5fE8F4:APA91bH0j511mwO9mQ4b2Uu44rZdoGcB9dzqg4TLujUj_oYY7YSJPGTehkROioB3QrHvSlt1CDzab4IhOkloDNNtWZW5LMiGTcR1tKFreUOLlcxnnvt4I7lwc7NdJ6qI0nF0GGgew77F",
+			"notification" : {
+				"title" : "Mensagem para o Firebase",
+				"body" : "Teste firebase"
+			}, 
+			"data" : {
+				"nome" : "Ricardo",
+				"sobrenome" : "Lecheta"
+			}
+		};
+		
+		ajax.send(JSON.stringify(bodyData));
+
+		ajax.onreadystatechange = function() {
+			if(ajax.readyState == 4 && ajax.status == 200) {
+				console.log(ajax.responseText);
+			}
+		}
+	</script>
+	
+	
+</body>
+</html>

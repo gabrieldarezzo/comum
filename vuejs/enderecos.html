@@ -1,0 +1,84 @@
+<div class="panel-body" style="max-height: 450px; overflow: auto; border: 1px;">
+
+    <div v-for="(row, index) in forGroup.enderecos" :key="index">
+        <div class="row">
+            <input type="hidden" v-model="row.end_id" number/>
+            <div class="form-group col-md-3">
+                <div class="form-group" v-bind:class="{ 'has-error': errors.has('logradouro'+index) }">
+                    <label>Logradouro</label>
+                    <input :name="`logradouro${index}`" class="form-control input-sm" v-model.trim="row.end_logradouro" v-validate="'required'" :class="{'form-control': true }">
+                    <span class="help-block" v-if="errors.has('logradouro'+index)">{{dictionary.custom.required}}</span>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Número</label>
+                    <input class="form-control input-sm" v-model.trim="row.end_numero">
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Complemento</label>
+                    <input class="form-control input-sm" v-model.trim="row.end_complemento">
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Bairro</label>
+                    <input class="form-control input-sm" v-model.trim="row.end_bairro">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>CEP</label>
+                    <the-mask :mask="['#####-###']" class="form-control  input-sm" v-model.trim="row.end_cep" />
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>UF</label>
+                    <select class="form-control input-sm" v-model="row.mun_uf">
+                        <option value="0">GO</option>
+                        <option value="0">SP</option>
+                        <option value="0">MA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Município</label>
+                    <select class="form-control input-sm" v-model="row.mun_id">
+                        <option value="0">São Paulo</option>
+                        <option value="0">Goiânia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>País</label>
+                    <select class="form-control input-sm" v-model="forGroup.pai_id">
+                        <option v-for="option in optPaises" v-bind:value="option.nac_id" v-bind:key="option.nac_id">
+                            {{ option.nac_descricao }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <div class="form-group">
+                    <label>Ponto de referência</label>
+                    <input class="form-control input-sm" v-model.trim="row.end_pontoref">
+                </div>
+            </div>
+            <div class="form-group col-md-3 pull-right">
+                <div class="form-group" style="margin-top: 30px; float: right;">
+                    <button class="btn btn-success btn-sm" @click="addRow(index)">Adicionar</button>
+                    <button class="btn btn-danger btn-sm" v-show="forGroup.enderecos.length > 1" @click="removeRow(index)">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+		var ajax = new XMLHttpRequest();
+		
+		
+		var url = "http://10.0.0.110:8000/api/login";
+		
+		//var params = "lorem=ipsum&name=binny";
+		//var params = "lorem=" + '123';
+		//data.registrationId
+		ajax.open("POST", url, true);		
+		//ajax.setRequestHeader("Content-type", "application/application/json");
+		//ajax.setRequestHeader( "Authorization", "key=AAAAdKChS2I:APA91bGFjq8DOTrxIN55C7sa8fu1mDfUlUnBthwQF-uBTy4fW7WomPdPoL2ZX-AlFazgHnDMysi1TJNO5iQFkjzSV8Hy6AJe3gNBlOvh1gd9Tcc37lknrGGof8NyrTti3Yag642QQyUSrasuL3Kw7jEd2wcdMP1Uog"  );
+		
+		
+		var bodyData = {
+			"email" : "user@user.com",
+			"password" : "123456"
+        };
+		
+		ajax.send(JSON.stringify(bodyData));
+
+		ajax.onreadystatechange = function() {
+			if(ajax.readyState == 4 && ajax.status == 200) {
+				console.log(ajax.responseText);
+			}
+		}
+	</script>
+	
+	
+</body>
+</html>

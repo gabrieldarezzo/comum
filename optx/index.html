@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	
+	
+	<div>	
+	
+		<p>Opção 1</p>
+		<select name="" id="opt1">
+			<option value="1">opt1</option>
+			<option value="2">opt2</option>
+		</select>
+
+		<p>Opção 2</p>
+		<select name="campo2" id="opt2" >
+			<option value="" >-- Selecione --</option>
+			<option value="1" >opt1</option>
+			<option value="2">opt2</option>
+			<option value="3" >opt3</option>
+			<option value="4" >opt4</option>			
+		</select>
+	</div>
+	
+	
+	<button id="click-me">Aqui</button>
+	
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$( "#opt1" ).bind( "change", function() {
+				const optSelecionada = $( "#opt1" ).val();
+				
+				$( "#opt2" ).val('');
+				
+				
+				$( "#opt2 option" ).each(function(i, obj) {
+				
+					$(this).removeAttr('disabled');
+				
+					if($(obj).val() == optSelecionada) {
+						$(this).attr('disabled', 'disabled');
+					}					
+				});
+			});
+			
+			function disableSelectField(selectInput){
+				selectInput
+				
+				
+				
+			
+			}
+			
+			$( "#click-me" ).bind( "click", function() {
+				
+				
+			
+			});
+			
+			
+			
+			
+				
+				
+		});
+			
+	</script>
+</body>
+</html>

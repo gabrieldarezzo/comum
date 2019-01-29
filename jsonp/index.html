@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+	
+		const TOKEN_BEARER = 'eyJvIjoie1wiaVwiOlwiQ2lhc2hvcFwiLFwiblwiOlwiVGVzdGUgUmV0aXJhXCIsXCJwXCI6XCI2NzdlNDc3OS1mZWNmLTQzODEtOGU0My1mZDFjODgwMzllZmRcIn0iLCJzIjoickwzUjFxY1JFdm5VcVJzUDVkRVdUSVpYZUh2SUJnUWl4OEVuZWZ6VUZNeW5MR2RIY0ZpZWVud0I2STZmUWhRTERuTHRDcHFNSWU2cWp3Q0s3Y2UzOFRvTjZFdHFEam94NjROT0NnYjI1SHc4NkljdDIzaWJJZVlEb2hLYlRENUtsbnpoNHdHdnRMRENJRUVHYmFTU1ZGdFpINjRQMHhJdWRlWnVjb3BMRFBJPSJ9';
+		const urlParam = 'https://www.lojasantoantonio.com.br/api/v1/clusters/534/Clustersitems';
+		
+		const headers = {
+			'Authorization' : `Bearer ${TOKEN_BEARER}`,
+		};
+		
+		
+		$.ajax({
+			url: urlParam,
+			type:'GET',
+			headers: headers,
+			jsonp: "callback",
+			dataType: "jsonp",
+			success: function(response){
+				
+				console.log(response)
+			}
+			,error: function(json){
+				console.log(json);
+			}
+		});
+	});
+	
+	</script>
+	
+	
+</body>
+</html>

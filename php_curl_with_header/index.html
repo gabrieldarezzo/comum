@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<ul id="listagem"></ul>
+	
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		const tokenStoAntonio = 'eyJvIjoie1wiaVwiOlwiQ2lhc2hvcFwiLFwiblwiOlwiVEVTVEUtUkVRVUVTVFwiLFwicFwiOlwiYTYyYWE4YTEtMjM2Mi00MzdmLWFmMTAtZWUxN2Q2ZGJjMDQ5XCJ9IiwicyI6IkVlZktIZUlveEg4VEpoN0lEQ3ZibGhVZmN2OXQ3MDlhOE5aS3BpM0U0Z0FCcFJGY25ZQkdBcGlUUWp0aEx4NGhteGtMUmRVWnc5UytGM0d6ZnM1Q3RWaEpXN3ZvMTIxZlNtRnBpbnRSTE4xQm9OdXJYWEo1YnA0WnZxM2JKTFR1VDUxVnc2NWdUT3RVYlRzRlorLzVZSCtpWmwvVUUrcTVRTGlYNllHRElOUT0ifQ==';
+		$.ajax({
+			url: 'http://developer.romulopavan.com.br/minhaChamada.php?token=' + tokenStoAntonio,
+			type:'GET',			
+			
+			dataType: "json",
+			success: function(response){
+				response.map(function(produtos){			
+					$("#listagem").append(`<li>${produtos.name}</li>`);
+				});
+			}
+			,error: function(json){
+				console.log(json);
+			}
+		});
+	});
+	
+	</script>
+</body>
+</html>
