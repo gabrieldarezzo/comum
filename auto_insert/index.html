@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+</head>
+<body>
+	
+	<form id="formInput">
+	
+		<input type="hidden" name="id" value="1"/>
+		
+		<p>Data:</p>
+		<input type="tel" class="update-field" name="data" id="data" placeholder="99/99/9999"/>
+		<p>Hora:</p>
+		<input type="tel" class="update-field" name="hora" id="hora" placeholder="99:99"/>
+	</form>
+	
+
+	<script type="text/javascript">	
+		function updateFields() {
+			var data = new FormData(document.getElementById('formInput'));
+			var ajax = new XMLHttpRequest();
+			ajax.open("POST", "post.php", true);
+			ajax.send(data);
+		}
+		
+		var fields = document.getElementsByClassName("update-field");
+		for (var i = 0; i < fields.length; i++) {
+			fields[i].addEventListener('keyup',  function() {
+				updateFields();
+			});
+		}
+	</script>
+</body>
+</html>

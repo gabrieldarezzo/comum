@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+		var ajax = new XMLHttpRequest();
+		
+		//var url = "https://fcm.googleapis.com/fcm/send";		
+		//var url = "https://fcm.googleapis.com/v1/projects/vue-pwa-a9e64/messages:send";
+		var url = "https://api.grupofleury.com.br/integracao-hospitais/v1/pedidos";
+		
+		//var params = "lorem=ipsum&name=binny";
+		//var params = "lorem=" + '123';
+		//data.registrationId
+		ajax.open("POST", url, true);		
+		//ajax.setRequestHeader("Content-type", "application/application/json");
+		//ajax.setRequestHeader( "Authorization", "key=AAAAdKChS2I:APA91bGFjq8DOTrxIN55C7sa8fu1mDfUlUnBthwQF-uBTy4fW7WomPdPoL2ZX-AlFazgHnDMysi1TJNO5iQFkjzSV8Hy6AJe3gNBlOvh1gd9Tcc37lknrGGof8NyrTti3Yag642QQyUSrasuL3Kw7jEd2wcdMP1Uog"  );
+		
+		ajax.setRequestHeader("Content-type", "application/json");
+		ajax.setRequestHeader("cache-control", "no-cache");
+		
+		ajax.setRequestHeader("client_id", "87b3b11d-c693-3677-a468-7a7704fe9e33");
+		ajax.setRequestHeader("authorization", "Basic ODdiM2IxMWQtYzY5My0zNjc3LWE0NjgtN2E3NzA0ZmU5ZTMzOjM0ZDU2NTdlLWQyYzAtM2EzZS05NWRjLWZlOWU0Njc2MzRjOQ==");
+		
+		
+		
+           
+		var bodyData = {
+			"data" : {
+				client_id: '87b3b11d-c693-3677-a468-7a7704fe9e33',
+				extraInfo: {},
+				redirect_uri: 'http://localhost',
+				state: 'string',
+			}
+		};
+		
+		  
+		
+		ajax.send(JSON.stringify(bodyData));
+
+		ajax.onreadystatechange = function() {
+			if(ajax.readyState == 4 && ajax.status == 200) {
+				console.log(ajax.responseText);
+			}
+		}
+	</script>
+	
+	
+</body>
+</html>
